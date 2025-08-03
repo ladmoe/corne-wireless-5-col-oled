@@ -40,6 +40,18 @@
             key-positions = <26 27 28>;
             layers = <4>;
         };
+
+        copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <21 22>;
+            layers = <0>;
+        };
+
+        paste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <21 23>;
+            layers = <0>;
+        };
     };
 
     chosen {
@@ -59,9 +71,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "F_MT";
             bindings = <&kp>, <&kp>;
-
+            flavor = "tap-preferred";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>; // 200 for now instead of 150ms because I am still getting used to the layout.
         };
     };
         keymap {
@@ -69,16 +81,17 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  F  |  P  |  B  |     |  J  |  L   |  U   |  Y   | ; |
+// |  Q  |  W  |  F  |  P  |  B  |     |  J  |  L   |  U   |  Y   | ' |
 // |  A  |  R  |  S  |  T  |  G  |     |  M  |  N   |  E   |  I   | O | 
 // |  Z  |  X  |  C  |  D  |  V  |     |  K  |  H   | , | . | / |
-//             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
+//             | SHFT| SPC | LWR |     | LY3 | RSE  | BSPC |
                         display-name = "Base";
                         bindings = <
                                //AS(Q) AS(W) AS(F) AS(P) AS(B)     AS(J)   AS(L)  AS(U)     AS(Y)     AS(APOS)
                                //AS(A) AS(R) AS(S) AS(T) AS(G)     AS(M)   AS(N)  AS(E)     AS(I)     AS(O)
                                //AS(Z) AS(X) AS(C) AS(D) AS(V)     AS(K)   AS(H)  AS(COMMA) AS(DOT)   AS(FSLH)
-    &kp Q   &kp W   &kp F   &kp P   &kp B         &kp J   &kp L    &kp U   &kp Y   &kp SEMI
+                               //probably could be deleted since I found a better setup. I might come back to this though.
+    &kp Q   &kp W   &kp F   &kp P   &kp B         &kp J   &kp L    &kp U   &kp Y   &kp APOS
     &f_mt LGUI A   &f_mt LCTRL R   &f_mt LALT S   &kp T   &kp G         &kp M   &kp N    &f_mt RALT E &f_mt RCTRL I &f_mt RGUI O
     &kp Z   &kp X   &kp C   &kp D   &kp V         &kp K   &kp H    &kp COMMA   &kp DOT   &kp FSLH
            &kp LSHFT &kp SPACE &mo 1         &mo 3   &mo 2  &kp BSPC
@@ -129,14 +142,14 @@
 
                 game_layer {
 // -----------------------------------------------------------------------------------------
-// | Q | W | F | P | B |     | J | L | U | Y | ; |
+// | Q | W | F | P | B |     | J | L | U | Y | ' |
 // | A | R | S | T | G |     | M | N | E | I | O | 
 // | Z | X | C | D | V |     | K | H | , | . | / |
 // | CTRL | SHFT | SPC |     | ENT | GUI | BKSP |
                         display-name = "Game";
                         bindings = <
 
-    &kp Q   &kp W   &kp F   &kp P   &kp B               &kp J   &kp L    &kp U   &kp Y   &kp SEMI
+    &kp Q   &kp W   &kp F   &kp P   &kp B               &kp J   &kp L    &kp U   &kp Y   &kp APOS
     &kp A   &kp R   &kp S   &kp T   &kp G               &kp M   &kp N    &kp E   &kp I   &kp O
     &kp Z   &kp X   &kp C   &kp D   &kp V               &kp K   &kp H    &kp COMMA   &kp DOT   &kp FSLH
             &kp LCTRL  &kp LSHFT   &kp SPACE       &kp RET &kp LGUI &kp BSPC
