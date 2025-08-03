@@ -26,7 +26,7 @@
         };
 
         game-layer {
-            bindings = <&to 3>;
+            bindings = <&to 4>;
             key-positions = <6 7 8>;
             layers = <0>;
         };
@@ -34,7 +34,7 @@
         disable-game-layer {
             bindings = <&to 0>;
             key-positions = <26 27 28>;
-            layers = <3>;
+            layers = <4>;
         };
     };
 
@@ -63,9 +63,9 @@
 //             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
                         display-name = "Base";
                         bindings = <
-   AS(Q) AS(W) AS(F) AS(P) AS(B)     AS(J)   AS(L)  AS(U)     AS(Y)     &kp SEMI
+   AS(Q) AS(W) AS(F) AS(P) AS(B)     AS(J)   AS(L)  AS(U)     AS(Y)     AS(APOS)
    AS(A) AS(R) AS(S) AS(T) AS(G)     AS(M)   AS(N)  AS(E)     AS(I)     AS(O)
-   AS(Z) AS(X) AS(C) AS(D) AS(V)     AS(K)   AS(H)  AS(COMMA) AS(DOT)  AS(FSLH)
+   AS(Z) AS(X) AS(C) AS(D) AS(V)     AS(K)   AS(H)  AS(COMMA) AS(DOT)   AS(FSLH)
         &kp LGUI &mo 1 &kp SPACE     AS(RET) &mo 2  &kp BSPC
                         >;
                 };
@@ -76,7 +76,7 @@
 // | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
 // | BTCLR |     |     |     |     |     |     |     |     |     |     |
 //               | GUI |     | SPC |     | ENT | ESC | TAB |
-                        display-name = "Lower";
+                        display-name = "BT";
                         bindings = <
    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans 
@@ -91,13 +91,40 @@
 // | -_ |  =+ |  {  |  [  |  (  |     |  )  |  ]  |  }  |  /?  |  \|  |
 // | `~ |     |     |  ,< |  :  |     |  ;  |  .> | CTRL| META |      |
 //            | GUI | ESC | SPC |     | ENT |     | TAB |
-                        display-name = "Raise";
+                        display-name = "SYM";
                         bindings = <
 
    AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
    AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
    AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
                        &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &trans    &kp TAB
+                        >;
+                };
+
+                mouse_layer {
+                        display-name = "Mouse";
+                        bindings = <
+
+   &trans   &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans          &trans    &trans    &trans      &trans    &trans 
+   &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans          &trans    &trans    &trans      &trans    &trans
+   &trans   &trans         &trans         &trans          &trans          &trans    &trans    &trans      &trans    &trans
+                           &trans         &mkp LCLK       &mkp RCLK       &trans    &trans    &trans
+                        >;
+                };
+
+                game_layer {
+// -----------------------------------------------------------------------------------------
+// | Q | W | F | P | B |     | J | L | U | Y | ; |
+// | A | R | S | T | G |     | M | N | E | I | O | 
+// | Z | X | C | D | V |     | K | H | , | . | / |
+// | CTRL | SHFT | SPC |     | ENT | GUI | BKSP |
+                        display-name = "Game";
+                        bindings = <
+
+    &kp Q   &kp W   &kp F   &kp P   &kp B               &kp J   &kp L    &kp U   &kp Y   &kp SEMI
+    &kp A   &kp R   &kp S   &kp T   &kp G               &kp M   &kp N    &kp E   &kp I   &kp O
+    &kp Z   &kp X   &kp C   &kp D   &kp V               &kp K   &kp H    &kp COMMA   &kp DOT   &kp FSLH
+            &kp LCTRL  &kp LEFT_SHIFT   &kp SPACE       &kp RET &kp LGUI &kp BACKSPACE
                         >;
                 };
 
