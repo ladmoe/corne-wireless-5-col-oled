@@ -9,6 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default is 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default is 10
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -109,7 +111,7 @@
    &trans   &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans          &trans    &trans    &trans      &trans    &trans 
    &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans          &trans    &trans    &trans      &trans    &trans
    &trans   &trans         &trans         &trans          &trans          &trans    &trans    &trans      &trans    &trans
-                           &trans         &mkp LCLK       &mkp RCLK       &trans    &trans    &trans
+                           &trans         &mkp RCLK       &mkp LCLK       &trans    &trans    &trans
                         >;
                 };
 
