@@ -15,6 +15,7 @@
 #define AS(keycode) &as LS(keycode) keycode
 
 / {
+
     combos {
         compatible = "zmk,combos";
 
@@ -54,7 +55,10 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-    };
+        &mt {
+            tapping-term-ms = <150>;
+            };
+        };
         keymap {
                 compatible = "zmk,keymap";
 
