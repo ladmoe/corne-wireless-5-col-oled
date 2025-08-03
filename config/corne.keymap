@@ -122,10 +122,17 @@
                         display-name = "SYM";
                         bindings = <
 
-   AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
-   AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
-   AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
-                       &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &trans    &kp TAB
+                   //AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
+                   //AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
+                   //AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
+
+                    //old keybinds
+
+
+    &kp TILDE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp EQUAL  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp PIPE
+    &kp SEMI   &kp PERCENT           &kp MINUS              &kp EXCL        &kp AMPERSAND      &kp PLUS   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTRK
+    &kt GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT          &kp HASH           &kp CARET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
+                       &kp DOUBLE_QUOTES      &kp SPACE       &kp N0             &trans     &trans        &kp TAB
                         >;
                 };
 
@@ -152,7 +159,23 @@
     &kp Q   &kp W   &kp F   &kp P   &kp B               &kp J   &kp L    &kp U   &kp Y   &kp APOS
     &kp A   &kp R   &kp S   &kp T   &kp G               &kp M   &kp N    &kp E   &kp I   &kp O
     &kp Z   &kp X   &kp C   &kp D   &kp V               &kp K   &kp H    &kp COMMA   &kp DOT   &kp FSLH
-            &kp LCTRL  &kp LSHFT   &kp SPACE       &kp RET &kp LGUI &kp BSPC
+            &kp LSHFT &kp SPACE     &mo 5               &kp RET &kp LGUI &kp BSPC
+                        >;
+                };
+
+                game_layer_2 {
+// -----------------------------------------------------------------------------------------
+// | 7 | 1 | 2 | 3 |   |     | J | L | U | Y | ' |
+// |   | 4 | 5 | 6 |   |     | M | N | E | I | O | 
+// |   |   |   |   |   |     | K | H | , | . | / |
+// | CTRL | SHFT | SPC |     | ENT | GUI | BKSP |
+                        display-name = "Game2";
+                        bindings = <
+
+    &N7      &kp N1         &kp N2         &kp N3          &trans          &trans    &trans    &trans      &trans    &trans
+    &trans   &kp N4         &kp N5         &kp N6          &trans          &trans    &trans    &trans      &trans    &trans
+    &trans   &trans         &trans         &trans          &trans          &trans    &trans    &trans      &trans    &trans
+            &trans   &trans    &trans           &trans &trans &trans
                         >;
                 };
 
