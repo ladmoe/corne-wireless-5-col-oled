@@ -12,6 +12,32 @@
 #define AS(keycode) &as LS(keycode) keycode
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        enter-combo {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18>;
+        };
+
+        esc-combo {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        game-layer {
+            bindings = <&to 3>;
+            key-positions = <6 7 8>;
+            layers = <0>;
+        };
+
+        disable-game-layer {
+            bindings = <&to 0>;
+            key-positions = <26 27 28>;
+            layers = <3>;
+        };
+    };
+
     chosen {
         zmk,physical-layout = &foostan_corne_5col_layout;
     };
