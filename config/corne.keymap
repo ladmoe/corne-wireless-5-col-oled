@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default is 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default is 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 15    // default is 10
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -66,10 +66,13 @@
 //             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
                         display-name = "Base";
                         bindings = <
-   AS(Q) AS(W) AS(F) AS(P) AS(B)     AS(J)   AS(L)  AS(U)     AS(Y)     AS(APOS)
-   AS(A) AS(R) AS(S) AS(T) AS(G)     AS(M)   AS(N)  AS(E)     AS(I)     AS(O)
-   AS(Z) AS(X) AS(C) AS(D) AS(V)     AS(K)   AS(H)  AS(COMMA) AS(DOT)   AS(FSLH)
-        &kp LGUI &mo 1 &kp SPACE     &mo 3   &mo 2  &kp BSPC
+                               //AS(Q) AS(W) AS(F) AS(P) AS(B)     AS(J)   AS(L)  AS(U)     AS(Y)     AS(APOS)
+                               //AS(A) AS(R) AS(S) AS(T) AS(G)     AS(M)   AS(N)  AS(E)     AS(I)     AS(O)
+                               //AS(Z) AS(X) AS(C) AS(D) AS(V)     AS(K)   AS(H)  AS(COMMA) AS(DOT)   AS(FSLH)
+    &kp Q   &kp W   &kp F   &kp P   &kp B         &kp J   &kp L    &kp U   &kp Y   &kp SEMI
+    &mt LGUI A   &mt LCTRL R   &mt LALT S   &kp T   &kp G         &kp M   &kp N    &kp RALT E &mt RCTRL I &mt RGUI O
+    &kp Z   &kp X   &kp C   &kp D   &kp V         &kp K   &kp H    &kp COMMA   &kp DOT   &kp FSLH
+           &kp LSHFT &kp SPACE &mo 1         &mo 3   &mo 2  &kp BSPC
                         >;
                 };
 
@@ -108,8 +111,8 @@
                         display-name = "Mouse";
                         bindings = <
 
-   &trans   &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans          &trans    &trans    &trans      &trans    &trans 
-   &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans          &trans    &trans    &trans      &trans    &trans
+   &trans   &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans          &kp K_VOLUME_DOWN2 &kp K_VOLUME_UP2 &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC    &trans 
+   &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans          &kp C_PREV &C_NEXT &kp K_PLAY_PAUSE      c&trans    &trans
    &trans   &trans         &trans         &trans          &trans          &trans    &trans    &trans      &trans    &trans
                            &trans         &mkp RCLK       &mkp LCLK       &trans    &trans    &trans
                         >;
@@ -127,7 +130,7 @@
     &kp Q   &kp W   &kp F   &kp P   &kp B               &kp J   &kp L    &kp U   &kp Y   &kp SEMI
     &kp A   &kp R   &kp S   &kp T   &kp G               &kp M   &kp N    &kp E   &kp I   &kp O
     &kp Z   &kp X   &kp C   &kp D   &kp V               &kp K   &kp H    &kp COMMA   &kp DOT   &kp FSLH
-            &kp LCTRL  &kp LEFT_SHIFT   &kp SPACE       &kp RET &kp LGUI &kp BACKSPACE
+            &kp LCTRL  &kp LSHFT   &kp SPACE       &kp RET &kp LGUI &kp BSPC
                         >;
                 };
 
