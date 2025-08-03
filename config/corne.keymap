@@ -165,17 +165,17 @@
 
                 game_layer_2 {
 // -----------------------------------------------------------------------------------------
-// | 7 | 1 | 2 | 3 |   |     | J | L | U | Y | ' |
+// |   | 1 | 2 | 3 |   |     | J | L | U | Y | ' |
 // |   | 4 | 5 | 6 |   |     | M | N | E | I | O | 
-// |   |   |   |   |   |     | K | H | , | . | / |
+// |   |   | 7 |   |   |     | K | H | , | . | / |
 // | CTRL | SHFT | SPC |     | ENT | GUI | BKSP |
                         display-name = "Game2";
                         bindings = <
 
-    &N7      &kp N1         &kp N2         &kp N3          &trans          &trans    &trans    &trans      &trans    &trans
-    &trans   &kp N4         &kp N5         &kp N6          &trans          &trans    &trans    &trans      &trans    &trans
-    &trans   &trans         &trans         &trans          &trans          &trans    &trans    &trans      &trans    &trans
-            &trans   &trans    &trans           &trans &trans &trans
+    &trans   &kp N1     &kp N2     &kp N3    &trans          &trans    &trans    &trans      &trans    &trans
+    &trans   &kp N4     &kp N5     &kp N6    &trans          &trans    &trans    &trans      &trans    &trans
+    &kp LSHFT &trans    &kp N7     &trans    &trans          &trans    &trans    &trans      &trans    &trans
+                        &trans     &trans    &trans          &trans    &trans    &trans
                         >;
                 };
 
