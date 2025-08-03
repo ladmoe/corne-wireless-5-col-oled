@@ -79,8 +79,7 @@
                                //AS(A) AS(R) AS(S) AS(T) AS(G)     AS(M)   AS(N)  AS(E)     AS(I)     AS(O)
                                //AS(Z) AS(X) AS(C) AS(D) AS(V)     AS(K)   AS(H)  AS(COMMA) AS(DOT)   AS(FSLH)
     &kp Q   &kp W   &kp F   &kp P   &kp B         &kp J   &kp L    &kp U   &kp Y   &kp SEMI
-    //&mt LGUI A   &mt LCTRL R   &mt LALT S   &kp T   &kp G         &kp M   &kp N    &kp RALT E &mt RCTRL I &mt RGUI O
-    &kp A   &kp R   &kp S   &kp T   &kp G               &kp M   &kp N    &kp E   &kp I   &kp O
+    &f_mt LGUI A   &f_mt LCTRL R   &f_mt LALT S   &kp T   &kp G         &kp M   &kp N    &f_mt RALT E &f_mt RCTRL I &f_mt RGUI O
     &kp Z   &kp X   &kp C   &kp D   &kp V         &kp K   &kp H    &kp COMMA   &kp DOT   &kp FSLH
            &kp LSHFT &kp SPACE &mo 1         &mo 3   &mo 2  &kp BSPC
                         >;
