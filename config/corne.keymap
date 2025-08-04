@@ -172,7 +172,7 @@
 
     &kp TILDE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp EQUAL  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp DOLLAR
     &kp SEMI   &kp PERCENT           &td_em_dash            &kp EXCL        &kp AMPERSAND      &kp PLUS   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTRK
-    &kt GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT          &kp HASH           &kp CARET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
+    &kp GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT          &kp HASH           &kp CARET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
                        &kp DOUBLE_QUOTES      &kp SPACE     &kp N0          &trans     &trans        &kp TAB
                         >;
                 };
