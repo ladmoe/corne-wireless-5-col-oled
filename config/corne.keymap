@@ -139,10 +139,6 @@
 // | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
 // | BTCLR |     |     |     |     |     |     |     |     |     |     |
 //               | GUI |     | SPC |     | ENT | ESC | TAB |
-
-
-
-          |  "  | SPC |  0  |     | TRNS | TRNS | TAB |
                         display-name = "BT";
                         bindings = <
    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
@@ -168,6 +164,8 @@
 //|  ~  |  (  |  )  |  {  |  }  |     |  =  |  7  |  8  |  9  |  $  |
 //|  ;  |  %  |  -  |  !  |  &  |     |  +  |  4  |  5  |  6  |  *  |
 //|  `  |  [  |  ]  |  @  |  #  |     |  ^  |  1  |  2  |  3  |  \| |
+//            |  "  | SPC |  0  |     | TRNS | TRNS | TAB |
+
                         display-name = "SYM";
                         bindings = <
 
