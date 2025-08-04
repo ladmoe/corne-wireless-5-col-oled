@@ -160,9 +160,9 @@
                             //old keybinds
 
 
-//|  `  |  (  |  )  |  {  |  }  |     |  =  |  7  |  8  |  9  |  $  |
+//|  ^  |  (  |  )  |  {  |  }  |     |  =  |  7  |  8  |  9  |  $  |
 //|  ;  |  :  |  -  |  !  |  &  |     |  +  |  4  |  5  |  6  |  *  |
-//|  %  |  [  |  ]  |  @  |  #  |     |  ^  |  1  |  2  |  3  |  \| |
+//|  %  |  [  |  ]  |  @  |  #  |     |  `  |  1  |  2  |  3  |  \| |
 //            |  "  | SPC |  0  |     | TRNS | TRNS | TAB |
 
                         display-name = "SYM";
@@ -170,9 +170,9 @@
 
 
 
-    &kp GRAVE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp EQUAL  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp DOLLAR
+    &kp CARET   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp EQUAL  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp DOLLAR
     &kp SEMI    &kp COLON             &td_em_dash            &kp EXCL        &kp AMPERSAND      &kp PLUS   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTRK
-    &kp PERCENT &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT          &kp HASH           &kp CARET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
+    &kp PERCENT &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT          &kp HASH           &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
                        &kp UNDER      &kp SPACE     &kp N0          &trans     &trans        &kp TAB
                         >;
                 };
