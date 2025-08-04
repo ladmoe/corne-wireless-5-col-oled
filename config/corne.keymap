@@ -61,7 +61,6 @@
             #binding-cells = <0>;
             tap-ms = <0>;
             wait-ms = <0>;
-            tap-preferred;
             bindings = 
                 /* Double-tap path */
                 <&macro_press   &kp LCTRL &kp LSHIFT>,
