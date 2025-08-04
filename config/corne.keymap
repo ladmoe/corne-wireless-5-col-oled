@@ -142,7 +142,7 @@
                         bindings = <
    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans 
-   &bt BT_CLR   &trans       &trans       &trans       &trans           &trans    &trans    &kp UNDER       &trans    &trans 
+   &bt BT_CLR   &trans       &trans       &trans       &trans           &trans    &trans    &kp DOUBLE_QUOTES &trans    &trans 
                              &kp LGUI     &trans       &kp SPACE        AS(RET)   &kp ESC   &kp TAB
                         >;
                 };
@@ -173,7 +173,7 @@
     &kp GRAVE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp EQUAL  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp DOLLAR
     &kp SEMI    &kp COLON             &td_em_dash            &kp EXCL        &kp AMPERSAND      &kp PLUS   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTRK
     &kp PERCENT &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT          &kp HASH           &kp CARET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
-                       &kp DOUBLE_QUOTES      &kp SPACE     &kp N0          &trans     &trans        &kp TAB
+                       &kp UNDER      &kp SPACE     &kp N0          &trans     &trans        &kp TAB
                         >;
                 };
 
