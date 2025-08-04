@@ -75,6 +75,20 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>; // 200 for now instead of 150ms because I am still getting used to the layout.
         };
+        l_mt: l_mt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "L_MT";
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+        };
+        td_em_dash: tap-dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_EM_DASH";
+            bindings = <&kp MINUS>, <&unicode_input "2014">; // "—"
+            tapping-term-ms = <200>;
+        };
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -85,6 +99,9 @@
 // |  A  |  R  |  S  |  T  |  G  |     |  M  |  N   |  E   |  I   | O | 
 // |  Z  |  X  |  C  |  D  |  V  |     |  K  |  H   | , | . | / |
 //             | SHFT| SPC | LWR |     | LY3 | RSE  | BSPC |
+
+
+
                         display-name = "Base";
                         bindings = <
                                //AS(Q) AS(W) AS(F) AS(P) AS(B)     AS(J)   AS(L)  AS(U)     AS(Y)     AS(APOS)
@@ -92,18 +109,21 @@
                                //AS(Z) AS(X) AS(C) AS(D) AS(V)     AS(K)   AS(H)  AS(COMMA) AS(DOT)   AS(FSLH)
                                //probably could be deleted since I found a better setup. I might come back to this though.
     &kp Q   &kp W   &kp F   &kp P   &kp B         &kp J   &kp L    &kp U   &kp Y   &kp APOS
-    &f_mt LGUI A   &f_mt LCTRL R   &f_mt LALT S   &kp T   &kp G         &kp M   &kp N    &f_mt RALT E &f_mt RCTRL I &f_mt RGUI O
+    &f_mt LGUI A   &f_mt LCTRL R   &l_mt LALT S   &kp T   &kp G         &kp M   &kp N    &l_mt RALT E &f_mt RCTRL I &f_mt RGUI O
     &kp Z   &kp X   &kp C   &kp D   &kp V         &kp K   &kp H    &kp COMMA   &kp DOT   &kp FSLH
            &kp LSHFT &kp SPACE &mo 1         &mo 3   &mo 2  &kp BSPC
                         >;
                 };
 
                 lower_layer {
-// -----------------------------------------------------------------------------------------
 // | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
 // | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
 // | BTCLR |     |     |     |     |     |     |     |     |     |     |
 //               | GUI |     | SPC |     | ENT | ESC | TAB |
+
+
+
+          |  "  | SPC |  0  |     | TRNS | TRNS | TAB |
                         display-name = "BT";
                         bindings = <
    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
@@ -115,24 +135,29 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// | 1! |  2@ |  3# |  4$ |  5% |     |  6^ |  7& |  8* |  9(  |  0)  |
-// | -_ |  =+ |  {  |  [  |  (  |     |  )  |  ]  |  }  |  /?  |  \|  |
-// | `~ |     |     |  ,< |  :  |     |  ;  |  .> | CTRL| META |      |
-//            | GUI | ESC | SPC |     | ENT |     | TAB |
+                            // | 1! |  2@ |  3# |  4$ |  5% |     |  6^ |  7& |  8* |  9(  |  0)  |
+                            // | -_ |  =+ |  {  |  [  |  (  |     |  )  |  ]  |  }  |  /?  |  \|  |
+                            // | `~ |     |     |  ,< |  :  |     |  ;  |  .> | CTRL| META |      |
+                            //            | GUI | ESC | SPC |     | ENT |     | TAB |
+                           //AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
+                           //AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
+                           //AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
+
+                            //old keybinds
+
+
+//|  ~  |  (  |  )  |  {  |  }  |     |  =  |  7  |  8  |  9  |  $  |
+//|  ;  |  %  |  -  |  !  |  &  |     |  +  |  4  |  5  |  6  |  *  |
+//|  `  |  [  |  ]  |  @  |  #  |     |  ^  |  1  |  2  |  3  |  \| |
                         display-name = "SYM";
                         bindings = <
 
-                   //AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
-                   //AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
-                   //AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
-
-                    //old keybinds
 
 
-    &kp TILDE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp EQUAL  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp PIPE
-    &kp SEMI   &kp PERCENT           &kp MINUS              &kp EXCL        &kp AMPERSAND      &kp PLUS   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTRK
+    &kp TILDE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp EQUAL  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp DOLLAR
+    &kp SEMI   &kp PERCENT           &td_em_dash            &kp EXCL        &kp AMPERSAND      &kp PLUS   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTRK
     &kt GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT          &kp HASH           &kp CARET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
-                       &kp DOUBLE_QUOTES      &kp SPACE       &kp N0             &trans     &trans        &kp TAB
+                       &kp DOUBLE_QUOTES      &kp SPACE     &kp N0          &trans     &trans        &kp TAB
                         >;
                 };
 
