@@ -54,6 +54,25 @@
         };
     };
 
+    macros {
+        td_dash: td_dash {
+            label = "TD_DASH";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            tap-preferred;
+            bindings = 
+                /* Double-tap path */
+                <&macro_press   &kp LCTRL &kp LSHIFT>,
+                <&macro_tap     &kp U>,
+                <&macro_release &kp LCTRL &kp LSHIFT>,
+                <&macro_tap     &kp N2 &kp N0 &kp N1 &kp N4 &kp SPC>
+                /* On tap only minus, we fall back to a separate binding in keymap */
+            ;
+        };
+    };
+
     chosen {
         zmk,physical-layout = &foostan_corne_5col_layout;
     };
@@ -83,11 +102,11 @@
             #binding-cells = <2>;
             tapping-term-ms = <300>;
         };
-        td_em_dash: tap-dance {
+        td_dash: tap_dance_dash {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_EM_DASH";
-            bindings = <&kp MINUS>, <&unicode_input "2014">; // "—"
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
+            bindings = <&kp MINUS>, <&td_dash>;
         };
     };
         keymap {
@@ -155,7 +174,7 @@
 
 
     &kp TILDE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp EQUAL  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp DOLLAR
-    &kp SEMI   &kp PERCENT           &td_em_dash            &kp EXCL        &kp AMPERSAND      &kp PLUS   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTRK
+    &kp SEMI   &kp PERCENT           &td_dash            &kp EXCL        &kp AMPERSAND      &kp PLUS   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTRK
     &kt GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT          &kp HASH           &kp CARET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
                        &kp DOUBLE_QUOTES      &kp SPACE     &kp N0          &trans     &trans        &kp TAB
                         >;
